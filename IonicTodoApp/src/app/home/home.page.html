@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      To do App<br>
+      Nombre de tâches : {{tasks.length}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <!-- Checkboxes in a List -->
+  <ion-list>
+    <ion-item *ngFor="let entry of tasks">
+      <ion-label>{{entry.val}}</ion-label>
+      <ion-checkbox color="danger" slot="end" (click)="deleteTask(i)" [(ngModel)]="entry.isChecked" ></ion-checkbox>
+    </ion-item>
+  </ion-list>
+
+  <form (ngSubmit)="submitTask();">
+    <h5>Ajouter une nouvelle tâche</h5>
+    <ion-input type="text" name="tasks" [(ngModel)]="newTask.val" placeholder="Saisissez une nouvelle tâche"></ion-input>
+    <ion-button (click)="submitTask()" color="danger" expand="full">Ajouter</ion-button>
+  </form>
+
+</ion-content>

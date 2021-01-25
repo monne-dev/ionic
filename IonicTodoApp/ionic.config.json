@@ -1,0 +1,7 @@
+{
+  "name": "IonicTodoApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
